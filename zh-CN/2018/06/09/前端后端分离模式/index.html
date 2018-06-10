@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="YMC, autumn">
+    <title>
+        ymc&#39;s blog
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="http://osly086qe.bkt.clouddn.com/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://osly086qe.bkt.clouddn.com/hexo-infinite-scroll-v1.0.1.min.css">
+    <script src="http://osly086qe.bkt.clouddn.com/hexo-infinite-scroll-v1.0.3.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function() {
+            $('.social-button').click(function() {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(http://osly086qe.bkt.clouddn.com/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            ymc&#39;s blog
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/YMC-GitHub">
+                        Github
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+        <h4 class="post-cat">
+            <a href="/categories/web/">
+                web
+            </a>
+        </h4>
+        
+            <h2 class="post-title">
+                前端后端分离模式
+            </h2>
+            <ul class="post-date">
+                <li>
+                    2018-06-09
+                </li>
+                <li>
+                    yemiancheng
+                </li>
+            </ul>
+            <div class="post-content">
+                <h1 id="前端后端分离模式"><a href="#前端后端分离模式" class="headerlink" title="前端后端分离模式"></a>前端后端分离模式</h1><blockquote>
+<p>题外话：一句话，只要超过一个人的团队，就要前后端分离；只要做SEO的产品，就要做服务端渲染。</p>
+</blockquote>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td style="text-align:left">页面布局复杂+使用主题样式</td>
+</tr>
+<tr>
+<td>②</td>
+<td style="text-align:left">页面渲染效果要求较高</td>
+</tr>
+<tr>
+<td>③</td>
+<td style="text-align:left">页面包含复杂业务逻辑</td>
+</tr>
+<tr>
+<td>④</td>
+<td style="text-align:left">页面渲染的数据量较大</td>
+</tr>
+</tbody>
+</table>
+<h2 id="模式收集"><a href="#模式收集" class="headerlink" title="模式收集"></a>模式收集</h2><h3 id="模式①"><a href="#模式①" class="headerlink" title="模式①"></a>模式①</h3><div align="center"><br><img src="/images/前端工程/前后分离模式01.png" title="前端后端分离模式01"><br></div>
+
+<h3 id="模式②"><a href="#模式②" class="headerlink" title="模式②"></a>模式②</h3><div align="center"><br><img src="/images/前端工程/前后分离模式02.png" title="前端后端分离模式02"><br></div>
+
+<h3 id="模式③"><a href="#模式③" class="headerlink" title="模式③"></a>模式③</h3><div align="center"><br><img src="/images/前端工程/前后分离模式03.png" title="前端后端分离模式03"><br></div>
+
+<h2 id="模式对比"><a href="#模式对比" class="headerlink" title="模式对比"></a>模式对比</h2><table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">传统模式</th>
+<th style="text-align:center">nginx+server</th>
+<th style="text-align:center">nodejs+server</th>
+<th style="text-align:center">nginx+nodejs+server</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEO</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td>浏览器渲染</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td>前后端耦合度</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td>请求效率水平</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<h2 id="职责分工"><a href="#职责分工" class="headerlink" title="职责分工"></a>职责分工</h2><p>方案1：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">view</th>
+<th style="text-align:center">control</th>
+<th style="text-align:center">model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td>后端</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>前端负责view+control；后端负责model</p>
+</blockquote>
+<p>方案2：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">view</th>
+<th style="text-align:center">control</th>
+<th style="text-align:center">model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td>后端</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>前端负责view；后端负责model+control</p>
+</blockquote>
+<h2 id="SEO解决"><a href="#SEO解决" class="headerlink" title="SEO解决"></a>SEO解决</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nodejs出现之前:</span><br><span class="line">方案1：做一动一静两套页面</span><br><span class="line">服务器判断请求来自蜘蛛就呈现静态页，否则呈现动态页.</span><br><span class="line">方案2：</span><br><span class="line">服务器架设虚拟浏览器软件，请求过来了先让虚拟浏览器跑一遍，再将得到的静态页面返回给客户端.</span><br><span class="line"></span><br><span class="line">nodejs出现之后:</span><br><span class="line">方案3：前后端同构方案</span><br><span class="line">一套代码在浏览器端和node端都可以运行，从而可以先在node端请求数据渲染模板，然后将渲染结果返回给浏览器最终呈现，是目前最完美的前后端</span><br><span class="line">分离+SEO解决方案</span><br></pre></td></tr></table></figure>
+<h2 id="数据交互"><a href="#数据交互" class="headerlink" title="数据交互"></a>数据交互</h2><h3 id="交互原理"><a href="#交互原理" class="headerlink" title="交互原理"></a>交互原理</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td style="text-align:center">接口地址</td>
+</tr>
+<tr>
+<td>②</td>
+<td style="text-align:center">请求参数</td>
+</tr>
+<tr>
+<td>③</td>
+<td style="text-align:center">返回参数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文档谁写"><a href="#文档谁写" class="headerlink" title="文档谁写"></a>文档谁写</h3><blockquote>
+<p>接口文档主要由后台来设计,修改,前端开发者起到了辅助的作用。</p>
+</blockquote>
+<h3 id="数据格式"><a href="#数据格式" class="headerlink" title="数据格式"></a>数据格式</h3><blockquote>
+<p>json&gt;xml&gt;…</p>
+</blockquote>
+<h2 id="辨别区分"><a href="#辨别区分" class="headerlink" title="辨别区分"></a>辨别区分</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.两个项目</span><br><span class="line">2.两个服务器(独立部署)</span><br><span class="line">3.两个不同的工程、两个不同的代码库</span><br><span class="line">4.不同的开发人员</span><br></pre></td></tr></table></figure>
+<p>简而言之：</p>
+<table>
+<thead>
+<tr>
+<th>类目</th>
+<th style="text-align:left">标志</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发时</td>
+<td style="text-align:left">前后端代码分离、开发职责分离、能够独立的开发测试</td>
+</tr>
+<tr>
+<td>运维时</td>
+<td style="text-align:left">前后端应用部署分离</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>若运维时不分离，则为半分离。</p>
+</blockquote>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①</td>
+<td style="text-align:left">大型分布式架构</td>
+</tr>
+<tr>
+<td>②</td>
+<td style="text-align:left">弹性计算架构</td>
+</tr>
+<tr>
+<td>③</td>
+<td style="text-align:left">微服务架构</td>
+</tr>
+<tr>
+<td>④</td>
+<td style="text-align:left">多端化服务</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>多端————浏览器端、车载终端、安卓、手机、电视…</p>
+</blockquote>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>
+            </div>
+</article>
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+    <h1>分类</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
+
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>归档</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018 . 06</a></li></ul>
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>标签</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/front-end/">front end</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>
